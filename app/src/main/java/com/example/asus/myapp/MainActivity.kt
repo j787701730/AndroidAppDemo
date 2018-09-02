@@ -69,5 +69,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         imgv.setImageResource(R.drawable.img1)
+
+
+        relative.setOnClickListener {
+            startActivity(intent.setClass(this, Main2Activity::class.java))
+        }
     }
 }
