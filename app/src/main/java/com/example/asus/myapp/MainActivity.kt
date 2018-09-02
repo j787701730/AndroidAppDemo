@@ -1,12 +1,16 @@
 package com.example.asus.myapp
 
+import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -74,5 +78,25 @@ class MainActivity : AppCompatActivity() {
         relative.setOnClickListener {
             startActivity(intent.setClass(this, Main2Activity::class.java))
         }
+
+        time2.setIs24HourView(true)
+
+        time2.setOnTimeChangedListener { view, hourOfDay, minute ->
+            Toast.makeText(this, "${hourOfDay} : ${minute}", Toast.LENGTH_SHORT).show()
+        }
+
+//        getTime.setOnClickListener { it: View? ->
+//            Toast.makeText(this, "" + t, Toast.LENGTH_SHORT).show()
+//        }
+
+        getTime.setOnClickListener {
+            Toast.makeText(this, "" + time2.currentHour + " : " + time2.currentMinute, Toast.LENGTH_SHORT).show()
+        }
+//        {
+//
+//            Toast.makeText(this, "" + time2.getTime, Toast.LENGTH_SHORT).show()
+//        }
+
     }
+
 }
