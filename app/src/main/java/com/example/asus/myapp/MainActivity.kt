@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.activity_title.*
 
+
 class MainActivity : TitleActivity() {
 
   @SuppressLint("NewApi")
@@ -18,7 +19,10 @@ class MainActivity : TitleActivity() {
 
     button_backward.setOnClickListener {
       Toast.makeText(this, "返回", Toast.LENGTH_SHORT).show()
+//      HttpThread(baseUrl).start()
+
     }
+    // webView.loadUrl("http://www.jikexueyuan.com");
 
     eat.setOnCheckedChangeListener { buttonView, isChecked ->
       if (isChecked) {
@@ -101,10 +105,7 @@ class MainActivity : TitleActivity() {
     getTime.setOnClickListener {
       Toast.makeText(this, "" + time2.currentHour + " : " + time2.currentMinute, Toast.LENGTH_SHORT).show()
     }
-//        {
-//
-//            Toast.makeText(this, "" + time2.getTime, Toast.LENGTH_SHORT).show()
-//        }
+
 
   }
 
