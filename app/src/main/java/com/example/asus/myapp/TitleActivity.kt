@@ -1,20 +1,18 @@
 package com.example.asus.myapp
 
+import android.app.Activity
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_title.*
 
-class Main2Activity : AppCompatActivity() {
+open class TitleActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main2)
-
-    linear.setOnClickListener {
-      //            Toast.makeText(this, "click", Toast.LENGTH_SHORT).show()
+    setContentView(R.layout.activity_title)
+    button_backward.setOnClickListener {
       finish()
     }
-
   }
 }
